@@ -4,43 +4,38 @@ let categories = document.querySelectorAll('.categories')
 
 
 
-// let randomCategoriesID = JSON.parse(localStorage.getItem()) || [];
+let randomCategoriesID = JSON.parse(localStorage.getItem('categories')) || [];
 //----------------------------Jason's Question Page fetch-------------------------------------------------------//
 let randCat = JSON.stringify(Math.random() * 20000);
 let randNum = (Math.random()* 5);
 
 
-
+getRandomCategories()
 
 function getRandomCategories(){
     
-    fetch(`https://jservice.io/api/categories?count=5&offset=${randCat}`)
+    fetch(`https://jservice.io/api/categories?count=10&offset=${randCat}`)
     .then(response => response.json())
     .then(catData =>{
-        console.log(catData);
-        let catValue1 = catData[0].id;
-        let catValue2 = catData[1].id;
-        let catValue3 = catData[2].id;
-        let catValue4 = catData[3].id;
-        let catValue5 = catData[4].id;
-
-        pushAndSave(catValue1, catValue2, catValue3, catValue4, catValue5);
-
-        // for (let i = 0; i < 5; i++) {
-           
+       
+        for (let i = 0; i < catData.length; i++) {
+           if(catData[i].clues_count>=5){
+            pushAndSave(catData[i].id)
+           }
             
-        // }
-        console.log(catData);
-
+        }
     
+
 })}
 
 displayCategories();
 
 function displayCategories(x) {
-    local
-    for (let i = 0; i < array.length; i++) {
-        fetch(`https://jservice.io/api/category?id=${}`)
+    let categoryIDNumber = JSON.parse(localStorage.getItem('categories'))
+    console.log(categoryIDNumber)
+    for (let i = 0; i < 5; i++) {
+        console.log(categoryIDNumber[i])
+        fetch(`https://jservice.io/api/category?id=${categoryIDNumber[i]}`)
         .then(function(response){
             return response.json()
         })
@@ -48,21 +43,20 @@ function displayCategories(x) {
             console.log(categoriesData)
             
             
-            categories[0].textContent = categoriesData.title.toUpperCase();
+            categories[i].textContent = categoriesData.title.toUpperCase();
         })
     }
 }
-    
-// function pushAndSave(a,b,c,d,e){
-//     randomCategoriesID.push(key1:value1, key2:value2, key3:value3, key4,value4, key5:value5)
-//     localStorage.setItem(, JSON.stringify(randomCategoriesID))
-// }
+
+function pushAndSave(x){
+    randomCategoriesID.push(x)
+    localStorage.setItem('categories', JSON.stringify(randomCategoriesID))
+}
 
 
 //fetch using the id in local storage
 
 //---------------------------------Assign fetch category to appropriate place------------------//
-
 
 
 
