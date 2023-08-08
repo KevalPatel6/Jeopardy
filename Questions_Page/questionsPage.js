@@ -47,13 +47,13 @@ fetch(`https://jservice.io/api/categories?count=1&offset=${randCat}`)
                 totalPoints += points;  
                 console.log(totalPoints);
                 localStorage.setItem("totalPoints", totalPoints);
-                window.location.href = "gameboard.html";
+                window.location.href = "../gameboard-layout/gameboard.html";
             })
             answerIncorrect.addEventListener("click", function(){
                 totalPoints -= points;
                 console.log(totalPoints);
                 localStorage.setItem("totalPoints", totalPoints);
-                window.location.href = "gameboard.html";
+                window.location.href = "../gameboard-layout/gameboard.html";
             })
         })
     })
