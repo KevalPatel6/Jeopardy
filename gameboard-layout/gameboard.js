@@ -16,13 +16,12 @@ getQuestionsAndAnswers();
 
 
 function getQuestionsAndAnswers(){
-    let CategoryIDNumber = JSON.parse(localStorage.getItem('categories'))
-
-    for (let i = 0; i < array.length; i++) {   
-    fetch(`https://jservice.io/api/clues?category=${categoryIDNumber[i]}`)
+    let categoryIDNumber = JSON.parse(localStorage.getItem('categories'))
+    for (let i = 0; i < 5; i++) {   
+    fetch(`https://jservice.io/api/clues?category=${categoryIDNumber[i].id}`)
         .then(response => response.json())
         .then(QnAData => {
-            console.log(qNA)
+          
             pushAndSave(qNA, QnAData, 'questions')
         })
         
@@ -44,7 +43,7 @@ function getRandomCategories() {
 
             for (let i = 0; i < catData.length; i++) {
                 if (catData[i].clues_count >= 5) {
-                    console.log(catData[i])
+              
                     pushAndSave(randomCategoriesID,catData[i],'categories')
                     
                 }
