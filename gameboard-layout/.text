@@ -1,0 +1,11 @@
+{"id":24678,
+"answer":"an elevator",
+"question":"In 1889, in New York City, Otis Company installed the first electric one of these",
+"value":200,
+"airdate":"1991-02-21T20:00:00.000Z",
+"created_at":"2022-12-30T18:47:42.448Z",
+"updated_at":"2022-12-30T18:47:42.448Z",
+"category_id":1510,
+"game_id":4759,
+"invalid_count":null,
+"category":{"id":1510,"title":"19th century america","created_at":"2022-12-30T18:42:43.255Z","updated_at":"2022-12-30T18:42:43.255Z","clues_count":147}}
