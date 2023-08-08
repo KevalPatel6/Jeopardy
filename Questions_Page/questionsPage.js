@@ -3,10 +3,10 @@ let answerText = document.querySelector("#answer");
 let timerText = document.querySelector("#timer");
 let pointsText = document.querySelector("#points");
 let categoryText = document.querySelector("#category");
+let checkAnswer = document.querySelector("#check-answer");
 let randCat = JSON.stringify(Math.random() * 20000);
 let randNum = (Math.random()* 5);
 let question;
-let answerStorage;
 let category;
 let points;
 
@@ -29,5 +29,8 @@ fetch(`https://jservice.io/api/categories?count=1&offset=${randCat}`)
 
         pointsText.textContent = points;
         questionText.textContent = question;
-        answerStorage = JSON.stringify(answer);
+        checkAnswer.addEventListener("click", function(){
+            answerText.textContent = answer;
+            checkAnswer.classList.add("hide");
+        })
     })
