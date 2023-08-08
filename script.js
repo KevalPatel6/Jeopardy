@@ -17,5 +17,10 @@ function startGame() {
         beginGameEl.classList.toggle("hide");
 }
 
-// ?start the game event listener goes to where
+// ?start the game event listener goes to Keval's game board
 
+
+console.log("jason")
+
+console.log("Keval");
+console.log("John");
