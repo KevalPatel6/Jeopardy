@@ -24,7 +24,7 @@ fetch("https://api.math.tools/numbers/nod")
 
 
 getRandomCatAndDisplay();
-// clearLocalStorage();
+
 
 
 
@@ -33,8 +33,13 @@ getRandomCatAndDisplay();
 function getRandomCatAndDisplay(catValue) {
 
     if (randomCategoriesID.length >= 5)
+        for (let i = 0; i < 5; i++) {
+        displayCategories(i);
+            
+            
+        }
         return;
-
+    
     fetch(`https://jservice.io/api/categories?count=5&offset=${catValue}`)
         .then(response => response.json())
         .then(catData => {
@@ -49,7 +54,7 @@ function getRandomCatAndDisplay(catValue) {
                     .then(qNAData => {
 
                     pushAndSave(questionsAnswersArr,qNAData,'questions')    
-                    categories[i].textContent = randomCategoriesID[i].title.toUpperCase();
+                    displayCategories(i);
                     })
                 }
                 
@@ -61,15 +66,15 @@ function getRandomCatAndDisplay(catValue) {
 
 //Can I wait to run the fetch then display categories//
 
-// function displayCategories(i) {
-//     for (let i = 0; i < 5; i++) {
-              
-//       categories[i].textContent = randomCategoriesID[i].title.toUpperCase();
+function displayCategories(i) {
+    for (let i = 0; i < 5; i++) {
+        
+      categories[i].textContent = randomCategoriesID[i].title.toUpperCase();
 
-//     }
+    }
 
 
-// }
+}
 
 
 //     for (let i = 0; i < 5; i++) {
