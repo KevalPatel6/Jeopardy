@@ -5,24 +5,42 @@ let randomCategoriesID = JSON.parse(localStorage.getItem('categories')) || [];
 let questionsAnswersArr = JSON.parse(localStorage.getItem('questions')) || [];
 let catAndquestionIndices = JSON.parse(localStorage.getItem('index')) || [];
 
+// let randCat = JSON.stringify(Math.random() * 20000);
+// let randNum = (Math.random() * 5);
+
 fetch("https://api.math.tools/numbers/nod")
-    .then(response => response.json())
-    .then(randomCats => {
-        let numValue = randomCats.contents.nod.numbers.number;
-        numValue = (Math.random() * 100000);
-        let catValue = numValue % 20000;
-        if(catValue === 0){
-            catValue = 1;
-        }
+.then(response => response.json())
+.then(randomCats => {
+    console.log(randomCats);
+    let numValue = randomCats.contents.nod.numbers.number
+    numValue = (Math.random() * 100000)
+    let catValue = numValue % 20000
+    if (catValue === 0){
+        catValue = 1;
+    }
     getRandomCatAndDisplay(catValue);
-    });
 
-function getRandomCatAndDisplay(randCat) {
+});
 
-    if (randomCategoriesID.length >= 5)
+
+getRandomCatAndDisplay();
+
+
+
+
+
+
+function getRandomCatAndDisplay(catValue) {
+
+    if (randomCategoriesID.length >= 5){
+        for (let i = 0; i < 5; i++) {
+        displayCategories(i);
+            
+            
+        }
         return;
-
-    fetch(`https://jservice.io/api/categories?count=5&offset=${randCat}`)
+}
+    fetch(`https://jservice.io/api/categories?count=5&offset=${catValue}`)
         .then(response => response.json())
         .then(catData => {
 
@@ -36,7 +54,7 @@ function getRandomCatAndDisplay(randCat) {
                     .then(qNAData => {
 
                     pushAndSave(questionsAnswersArr,qNAData,'questions')    
-                    categories[i].textContent = randomCategoriesID[i].title.toUpperCase();
+                    displayCategories(i);
                     })
                 }
                 
@@ -45,6 +63,34 @@ function getRandomCatAndDisplay(randCat) {
 
         })
 }
+
+//Can I wait to run the fetch then display categories//
+
+function displayCategories(i) {
+    for (let i = 0; i < 5; i++) {
+        
+      categories[i].textContent = randomCategoriesID[i].title.toUpperCase();
+
+    }
+
+
+}
+
+
+//     for (let i = 0; i < 5; i++) {
+//         fetch(`https://jservice.io/api/category?id=${randomCategoriesID[i].id}`)
+//             .then(function (response) {
+//                 return response.json()
+//             })
+//             .then(function (categoriesData) {
+//                 console.log(categoriesData)
+//                 categories[i].textContent = categoriesData.title.toUpperCase();
+//             })
+//     }
+// }
+
+
+
 
 function pushAndSave(x, y, z) {
     x.push(y)
