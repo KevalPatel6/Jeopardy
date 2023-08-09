@@ -1,0 +1,22 @@
+localStorage
+Storage {questions: `[[{"id":137138,"answer":"Morocco","question":"We'l…t":"2022-12-30T20:17:45.200Z","clues_count":5}}]]`, index: '["00","32","33"]', categories: '[{"id":15769,"title":"postcards from the edge","cl…title":"happy federal holiday!","clues_count":5}]', length: 3}categories: "[{\"id\":15769,\"title\":\"postcards from the edge\",\"clues_count\":5},{\"id\":15770,\"title\":\"\\\"sweet\\\" charity\",\"clues_count\":5},{\"id\":15779,\"title\":\"curses\",\"clues_count\":5},{\"id\":15780,\"title\":\"i'll be doggone\",\"clues_count\":5},{\"id\":15794,\"title\":\"happy federal holiday!\",\"clues_count\":5}]"index: "[\"00\",\"32\",\"33\"]"questions: "[[{\"id\":137138,\"answer\":\"Morocco\",\"questiolength: 3[[Prototype]]: Storage
+JSON.parse(localStorage.index)
+(3) ['00', '32', '33']
+let askedQuestions = JSON.parse(localStorage.index)
+undefined
+askedQuestions.length -1
+2
+askedQuestions[askedQuestions.length -1]
+'33'
+askedQuestions[askedQuestions.length -1].split("")
+(2) ['3', '3']
+JSON.parse(localStorage.questions)
+(5) [Array(5), Array(5), Array(5), Array(5), Array(5)]
+let cat = askedQuestions[askedQuestions.length -1].split("")[0]
+undefined
+cat
+'3'
+let q = askedQuestions[askedQuestions.length -1].split("")[1]
+undefined
+q
+'3'
