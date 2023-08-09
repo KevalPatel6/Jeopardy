@@ -8,7 +8,6 @@ let answerCorrect = document.querySelector("#correctButton");
 let answerIncorrect = document.querySelector("#incorrectButton")
 let setPoints = document.querySelector("#points-value")
 let randCat = JSON.stringify(Math.random() * 20000);
-let randNum = (Math.random()* 5);
 let question;
 let category;
 let points;
