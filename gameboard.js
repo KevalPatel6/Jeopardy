@@ -5,24 +5,37 @@ let randomCategoriesID = JSON.parse(localStorage.getItem('categories')) || [];
 let questionsAnswersArr = JSON.parse(localStorage.getItem('questions')) || [];
 let catAndquestionIndices = JSON.parse(localStorage.getItem('index')) || [];
 
-let randCat = JSON.stringify(Math.random() * 20000);
-let randNum = (Math.random() * 5);
+// let randCat = JSON.stringify(Math.random() * 20000);
+// let randNum = (Math.random() * 5);
 
+fetch("https://api.math.tools/numbers/nod")
+.then(response => response.json())
+.then(randomCats => {
+    console.log(randomCats);
+    let numValue = randomCats.contents.nod.numbers.number
+    numValue = (Math.random() * 100000)
+    let catValue = numValue % 20000
+    if (catValue === 0){
+        catValue = 1;
+    }
+    getRandomCatAndDisplay(catValue);
 
+});
 
-// clearLocalStorage();
 
 getRandomCatAndDisplay();
+// clearLocalStorage();
 
 
 
 
-function getRandomCatAndDisplay() {
+
+function getRandomCatAndDisplay(catValue) {
 
     if (randomCategoriesID.length >= 5)
         return;
 
-    fetch(`https://jservice.io/api/categories?count=5&offset=${randCat}`)
+    fetch(`https://jservice.io/api/categories?count=5&offset=${catValue}`)
         .then(response => response.json())
         .then(catData => {
 
