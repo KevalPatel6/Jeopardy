@@ -1,0 +1,44 @@
+.hide {
+    display: none
+}
+
+@keyframes title {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+#titleEl {
+    animation-name: example;
+    animation-duration: 3s;
+}
+
+#instructionsTitleEl {
+    animation-name: example;
+    animation-duration: 3s;
+}
+
+#instructionsEl {
+    animation-name: example;
+    animation-duration: 3s;
+}
+
+@keyframes example {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.btn {
+    animation-name: example;
+
+    animation-duration: 6s;
+}
