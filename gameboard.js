@@ -11,7 +11,7 @@ let catAndquestionIndices = JSON.parse(localStorage.getItem('index')) || [];
 fetch("https://api.math.tools/numbers/nod")
     .then(response => response.json())
     .then(randomCats => {
-        let numValue = numbers.number;
+        let numValue = randomCats.contents.nod.numbers.number;
         numValue = (Math.random() * 100000);
         let catValue = numValue % 20000;
         if(catValue === 0){
@@ -100,7 +100,7 @@ allAnswersEl.addEventListener('click', function(event){
       
 
 
-        // window.location.href='../Questions_Page/questionsPage.html'
+        window.location.href='../Questions_Page/questionsPage.html'
     }
 })
 
