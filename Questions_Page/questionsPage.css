@@ -1,0 +1,29 @@
+.hide{
+    visibility: collapse;
+}
+
+.card{
+    position: relative;
+    left: 40%;
+    top: 300px;
+}
+
+.list-group{
+    position: relative;
+    top: 50%;
+}
+
+button{
+    position: relative;
+    left: 36.7%;
+    top: 310px;
+}
+
+#points-box{
+    display: flex;
+    position: relative;
+    width: 200px;
+    height: 80px;
+    left: 1003px;
+    text-align: center;
+}
