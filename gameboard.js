@@ -1,8 +1,9 @@
 //------------------------------Make answer choices buttons----------------------------------//
-let allAnswersEl = document.querySelector('button')
+let allAnswersEl = document.querySelector('#gameboard-container')
 let categories = document.querySelectorAll('.categories')
 let randomCategoriesID = JSON.parse(localStorage.getItem('categories')) || [];
 let questionsAnswersArr = JSON.parse(localStorage.getItem('questions')) || [];
+let catAndquestionIndices = JSON.parse(localStorage.getItem('index')) || [];
 
 let randCat = JSON.stringify(Math.random() * 20000);
 let randNum = (Math.random() * 5);
@@ -21,7 +22,7 @@ function getRandomCatAndDisplay() {
     if (randomCategoriesID.length >= 5)
         return;
 
-    fetch(`https://jservice.io/api/categories?count=10&offset=${randCat}`)
+    fetch(`https://jservice.io/api/categories?count=5&offset=${randCat}`)
         .then(response => response.json())
         .then(catData => {
 
@@ -83,12 +84,18 @@ function clearLocalStorage() {
 }
 //fetch using the id in local storage
 
-//---------------------------------Assign fetch category to appropriate place------------------//
-// allAnswersEl.addEventListener('click', function(event){
-//     if(event.target==='button'){
-//         window.location.href='../Questions_Page/questionsPage.html'
-//     }
-// })
+// ---------------------------------Assign fetch category to appropriate place------------------//
+allAnswersEl.addEventListener('click', function(event){
+    if(event.target.matches('button')){
+        let questionindexes = event.target.dataset.categoryindex + event.target.dataset.questionindex 
+        
+        pushAndSave(catAndquestionIndices, questionindexes, 'index')
+      
+
+
+        // window.location.href='../Questions_Page/questionsPage.html'
+    }
+})
 
 
 
