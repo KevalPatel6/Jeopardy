@@ -32,14 +32,14 @@ getRandomCatAndDisplay();
 
 function getRandomCatAndDisplay(catValue) {
 
-    if (randomCategoriesID.length >= 5)
+    if (randomCategoriesID.length >= 5){
         for (let i = 0; i < 5; i++) {
         displayCategories(i);
             
             
         }
         return;
-    
+}
     fetch(`https://jservice.io/api/categories?count=5&offset=${catValue}`)
         .then(response => response.json())
         .then(catData => {
@@ -100,9 +100,7 @@ function pushAndSave(x, y, z) {
 function clearLocalStorage() {
     localStorage.clear()
 }
-//fetch using the id in local storage
 
-// ---------------------------------Assign fetch category to appropriate place------------------//
 allAnswersEl.addEventListener('click', function(event){
     if(event.target.matches('button')){
         let questionindexes = event.target.dataset.categoryindex + event.target.dataset.questionindex 
@@ -111,7 +109,7 @@ allAnswersEl.addEventListener('click', function(event){
       
 
 
-        // window.location.href='../Questions_Page/questionsPage.html'
+        window.location.href='../Questions_Page/questionsPage.html'
     }
 })
 
