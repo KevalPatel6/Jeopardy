@@ -1,6 +1,7 @@
 console.log("jason")
 console.log("Keval");
 console.log("John");
+localStorage.clear();
 
 let startButtonEl = document.getElementById('startButtonEl');
 let titleEl = document.getElementById('titleEl');
