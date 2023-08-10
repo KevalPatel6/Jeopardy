@@ -6,3 +6,16 @@
 .hide{
     visibility: hidden;
 }
+
+.categories{
+    text-shadow: 3px 3px black;
+    padding-top: 23px;
+}
+
+button {
+    text-shadow: 3px 3px black;
+}
+
+body{
+    background-color: purple;
+}
