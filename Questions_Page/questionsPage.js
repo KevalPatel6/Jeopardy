@@ -24,7 +24,7 @@ let value = questionObject.value;
 
 console.log(categoryObject)
 console.log(questionObject)
-let totalPoints = 100;//localStorage.getItem("totalPoints");
+let totalPoints = parseInt(localStorage.getItem("totalPoints"));
 console.log(totalPoints);
 setPoints.textContent = totalPoints;
 answerCorrect.classList.add("hide");
