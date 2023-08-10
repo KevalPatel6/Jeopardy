@@ -40,7 +40,7 @@ function fetchRandomNumber() {
 function getRandomCatAndDisplay(catValue) {
 
 
-    fetch(`https://jservice.io/api/categories?count=5&offset=${catValue}`)
+    fetch(`https://jservice.io/api/categories?count=10&offset=${catValue}`)
         .then(response => response.json())
         .then(catData => {
 
@@ -64,7 +64,6 @@ function getRandomCatAndDisplay(catValue) {
         })
 }
 
-//Can I wait to run the fetch then display categories//
 
 function displayCategories(i) {
     for (let i = 0; i < 5; i++) {
@@ -96,27 +95,30 @@ allAnswersEl.addEventListener('click', function (event) {
         
         window.location.href='../Questions_Page/questionsPage.html'
         
-        
-
+    
     }
 })
 
 function hideChosenQuestions() {
-
-    let indicesParsed = JSON.parse(localStorage.index)
-
-
-    for (let i = 0; i < indicesParsed.length; i++) {
-        let arrayOfIndices = indicesParsed[i]
-        let arrayOfIndicesSeparated = arrayOfIndices.split('')
-        for (let i = 0; i < allButtonEl.length; i++) {
+    
+    if(catAndquestionIndices===[]){
+    
+        return
+    }
+    else{
+        let indicesParsed = JSON.parse(localStorage.index)
+        for (let i = 0; i < indicesParsed.length; i++) {
+            let arrayOfIndices = indicesParsed[i]
+            let arrayOfIndicesSeparated = arrayOfIndices.split('')
+            for (let i = 0; i < allButtonEl.length; i++) {
             if(allButtonEl[i].dataset.categoryindex===arrayOfIndicesSeparated[0] && allButtonEl[i].dataset.questionindex===arrayOfIndicesSeparated[1]){
-    
+                
                 allButtonEl[i].classList.add('hide')
-    
+                
             }
             
         }
+    }
     }
 }
 
