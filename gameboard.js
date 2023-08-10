@@ -8,7 +8,6 @@ let gridLocationIDArr = JSON.parse(localStorage.getItem('gridLocation')) || [];
 let allButtonEl = document.querySelectorAll('button')
 
 
-
 //This kicks off the gameboard page from local storage or fetches random categories//
 if (randomCategoriesID.length >= 5) {
     for (let i = 0; i < 5; i++) {
@@ -48,11 +47,10 @@ function getRandomCatAndDisplay(catValue) {
                 if (catData[i].clues_count >= 5) {
 
                     pushAndSave(randomCategoriesID, catData[i], 'categories')
-                    
-                    fetch(`https://jservice.io/api/clues?category=${catData[i].id}`)
+                    console.log(randomCategoriesID)
+                    fetch(`https://jservice.io/api/clues?category=${randomCategoriesID[i].id}`)
                     .then(response => response.json())
                     .then(qNAData => {
-
                     pushAndSave(questionsAnswersArr,qNAData,'questions')  
                     localStorage.setItem("totalPoints", "0")  
                     // let totalPoints = "0";
