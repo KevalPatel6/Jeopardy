@@ -53,7 +53,11 @@ function getRandomCatAndDisplay(catValue) {
                     .then(response => response.json())
                     .then(qNAData => {
 
-                    pushAndSave(questionsAnswersArr,qNAData,'questions')    
+                    pushAndSave(questionsAnswersArr,qNAData,'questions')  
+                    localStorage.setItem("totalPoints", "0")  
+                    // let totalPoints = "0";
+                    // console.log(totalPoints);
+                    // /consider settin gup starting point value here. starting total point
                     displayCategories(i);
                     })
                 }
