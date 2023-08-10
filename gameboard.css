@@ -3,6 +3,12 @@
 
 }
 
+header{
+    color: white;
+    padding-top:20px
+    
+}
+
 .hide{
     visibility: hidden;
 }
@@ -13,13 +19,15 @@
 }
 
 button {
-    text-shadow: 3px 3px black;
+    text-shadow: 5px 5px black;
+    font-size: 100px;
+    font-family: helvetica;
 }
 
 body{
-    background-color: purple;
+    background-color: rgb(53, 4, 53);
 }
 
 #cat1-200{
-    width:100%
+    width:100%;
 }
