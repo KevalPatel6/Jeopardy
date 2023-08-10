@@ -64,7 +64,6 @@ function getRandomCatAndDisplay(catValue) {
         })
 }
 
-//Can I wait to run the fetch then display categories//
 
 function displayCategories(i) {
     for (let i = 0; i < 5; i++) {
@@ -104,10 +103,12 @@ allAnswersEl.addEventListener('click', function (event) {
 function hideChosenQuestions() {
 
     let indicesParsed = JSON.parse(localStorage.index)
-
-
+    console.log(indicesParsed);
+    if(indicesParsed.length === 25){
+        window.location.href = "./endpage.html";
+    }
     for (let i = 0; i < indicesParsed.length; i++) {
-        let arrayOfIndices = indicesParsed[i]
+        let arrayOfIndices = indicesParsed[i];
         let arrayOfIndicesSeparated = arrayOfIndices.split('')
         for (let i = 0; i < allButtonEl.length; i++) {
             if(allButtonEl[i].dataset.categoryindex===arrayOfIndicesSeparated[0] && allButtonEl[i].dataset.questionindex===arrayOfIndicesSeparated[1]){
