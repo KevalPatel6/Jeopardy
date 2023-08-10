@@ -4,8 +4,14 @@ let categories = document.querySelectorAll('.categories')
 let randomCategoriesID = JSON.parse(localStorage.getItem('categories')) || [];
 let questionsAnswersArr = JSON.parse(localStorage.getItem('questions')) || [];
 let catAndquestionIndices = JSON.parse(localStorage.getItem('index')) || [];
+let totalPoints = parseInt(localStorage.getItem("totalPoints")) || 0;
+
+document.getElementById("bigScore").textContent = "Total Score: " + totalPoints;
+
 let gridLocationIDArr = JSON.parse(localStorage.getItem('gridLocation')) || [];
 let allButtonEl = document.querySelectorAll('button')
+
+
 
 
 //This kicks off the gameboard page from local storage or fetches random categories//
@@ -34,6 +40,14 @@ fetch("https://api.math.tools/numbers/nod")
     getRandomCatAndDisplay(catValue);
 
 });
+ feature/displayScore
+
+
+getRandomCatAndDisplay();
+
+
+
+
 }
 
 function getRandomCatAndDisplay(catValue) {
@@ -53,9 +67,7 @@ function getRandomCatAndDisplay(catValue) {
                     .then(qNAData => {
                     pushAndSave(questionsAnswersArr,qNAData,'questions')  
                     localStorage.setItem("totalPoints", "0")  
-                    // let totalPoints = "0";
-                    // console.log(totalPoints);
-                    // /consider settin gup starting point value here. starting total point
+                    
                     displayCategories(i);
                     })
                 }
