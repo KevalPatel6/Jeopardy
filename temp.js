@@ -4,14 +4,8 @@ let categories = document.querySelectorAll('.categories')
 let randomCategoriesID = JSON.parse(localStorage.getItem('categories')) || [];
 let questionsAnswersArr = JSON.parse(localStorage.getItem('questions')) || [];
 let catAndquestionIndices = JSON.parse(localStorage.getItem('index')) || [];
- feature/displayScore
-let totalPoints = parseInt(localStorage.getItem("totalPoints")) || 0;
-
-document.getElementById("bigScore").textContent = "Total Score: " + totalPoints;
-
 let gridLocationIDArr = JSON.parse(localStorage.getItem('gridLocation')) || [];
 let allButtonEl = document.querySelectorAll('button')
-
 
 
 
@@ -28,29 +22,20 @@ else {
 
 
 function fetchRandomNumber() {
-fetch("https://api.math.tools/numbers/nod")
-.then(response => response.json())
-.then(randomCats => {
-    console.log(randomCats);
-    let numValue = randomCats.contents.nod.numbers.number
-    numValue = (Math.random() * 100000)
-    let catValue = numValue % 20000
-    if (catValue === 0){
-        catValue = 1;
-    }
-    getRandomCatAndDisplay(catValue);
+    fetch("https://api.math.tools/numbers/nod")
+        .then(response => response.json())
+        .then(randomCats => {
 
-});
- feature/displayScore
+            let numValue = randomCats.contents.nod.numbers.number
+            numValue = (Math.random() * 100000)
+            let catValue = numValue % 20000
+            if (catValue === 0) {
+                catValue = 1;
+            }
+            getRandomCatAndDisplay(catValue);
 
-
-getRandomCatAndDisplay();
-
-
-
-=======
+        });
 }
- main
 
 function getRandomCatAndDisplay(catValue) {
 
@@ -63,19 +48,17 @@ function getRandomCatAndDisplay(catValue) {
                 if (catData[i].clues_count >= 5) {
 
                     pushAndSave(randomCategoriesID, catData[i], 'categories')
-                    
-                    fetch(`https://jservice.io/api/clues?category=${catData[i].id}`)
-                    .then(response => response.json())
-                    .then(qNAData => {
 
-                    pushAndSave(questionsAnswersArr,qNAData,'questions')  
-                    localStorage.setItem("totalPoints", "0")  
-                    
-                    displayCategories(i);
-                    })
+                    fetch(`https://jservice.io/api/clues?category=${catData[i].id}`)
+                        .then(response => response.json())
+                        .then(qNAData => {
+
+                            pushAndSave(questionsAnswersArr, qNAData, 'questions')
+                            displayCategories(i);
+                        })
                 }
-                
-                
+
+
             }
 
         })
@@ -84,8 +67,8 @@ function getRandomCatAndDisplay(catValue) {
 
 function displayCategories(i) {
     for (let i = 0; i < 5; i++) {
-        
-      categories[i].textContent = randomCategoriesID[i].title.toUpperCase();
+
+        categories[i].textContent = randomCategoriesID[i].title.toUpperCase();
 
     }
 
@@ -102,17 +85,17 @@ function clearLocalStorage() {
     localStorage.clear()
 }
 
-allAnswersEl.addEventListener('click', function(event){
-    if(event.target.matches('button')){
-       
+allAnswersEl.addEventListener('click', function (event) {
+    if (event.target.matches('button')) {
+
         let catAndQuestionindices = event.target.dataset.categoryindex + event.target.dataset.questionindex
-      
+
         pushAndSave(catAndquestionIndices, catAndQuestionindices, 'index')
 
-
-        window.location.href='../Questions_Page/questionsPage.html'
-
         
+        window.location.href='../Questions_Page/questionsPage.html'
+        
+    
     }
 })
 
@@ -139,5 +122,5 @@ function hideChosenQuestions() {
     }
 }
 
-    
+
 
