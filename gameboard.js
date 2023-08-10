@@ -4,9 +4,10 @@ let categories = document.querySelectorAll('.categories')
 let randomCategoriesID = JSON.parse(localStorage.getItem('categories')) || [];
 let questionsAnswersArr = JSON.parse(localStorage.getItem('questions')) || [];
 let catAndquestionIndices = JSON.parse(localStorage.getItem('index')) || [];
+let totalPoints = parseInt(localStorage.getItem("totalPoints")) || 0;
 
-// let randCat = JSON.stringify(Math.random() * 20000);
-// let randNum = (Math.random() * 5);
+document.getElementById("bigScore").textContent = "Total Score: " + totalPoints;
+
 
 fetch("https://api.math.tools/numbers/nod")
 .then(response => response.json())
@@ -24,8 +25,6 @@ fetch("https://api.math.tools/numbers/nod")
 
 
 getRandomCatAndDisplay();
-
-
 
 
 
@@ -55,9 +54,7 @@ function getRandomCatAndDisplay(catValue) {
 
                     pushAndSave(questionsAnswersArr,qNAData,'questions')  
                     localStorage.setItem("totalPoints", "0")  
-                    // let totalPoints = "0";
-                    // console.log(totalPoints);
-                    // /consider settin gup starting point value here. starting total point
+                    
                     displayCategories(i);
                     })
                 }
