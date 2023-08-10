@@ -101,7 +101,7 @@ allAnswersEl.addEventListener('click', function (event) {
 
 function hideChosenQuestions() {
     
-    if(catAndquestionIndices===[]){
+    if(catAndquestionIndices.length=== 0){
     
         return
     }
