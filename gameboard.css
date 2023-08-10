@@ -2,3 +2,7 @@
     height: auto;
 
 }
+
+.hide{
+    visibility: hidden;
+}
