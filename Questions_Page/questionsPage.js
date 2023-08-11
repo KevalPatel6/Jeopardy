@@ -21,21 +21,17 @@ let pointValueObject = JSON.parse(localStorage.getItem("index"))
 let pointValue = pointValueObject[pointValueObject.length - 1].split("")[1]
 console.log(categoryObject, questionObject, pointValue)
 
-
-// let categoryObject = JSON.parse(localStorage.getItem("currentCategory"));
-// let questionObject = JSON.parse(localStorage.getItem("currentQuestion"));
 let category = categoryObject.title;
 let question = questionObject.question;
 let answer = questionObject.answer;
 let value = questionObject.value;
 
-let totalPoints = parseInt(localStorage.getItem("totalPoints"));   //localStorage.getItem("totalPoints");
-// console.log(totalPoints);
+let totalPoints = localStorage.getItem("totalPoints");   
 let questionPoints = 0;
 if (pointValue === "0") {
     questionPoints = 200
 } else {
-    // console.log(pointValue)
+
     questionPoints = (parseInt(pointValue) + 1) * 200
     console.log(questionPoints)
 }
@@ -48,8 +44,8 @@ answerIncorrect.classList.add("hide");
 categoryText.innerHTML = `category:  <p> ${category}</p>`;
 console.log(value, question, answer);
 
-// pointsText.textContent = "point value: " + value;
-questionText.innerHTML = `The answer is: <p> ${question}</p>`;
+
+questionText.textContent = "the answer is: " + question;
 
 checkAnswer.addEventListener("click", function () {
     answerText.textContent = answer;
@@ -62,13 +58,26 @@ checkAnswer.addEventListener("click", function () {
         totalPoints += questionPoints;
         console.log(totalPoints);
         localStorage.setItem("totalPoints", totalPoints);
-        window.location.href = "../gameboard.html";
+        document.getElementById("points-value").textContent = localStorage.getItem("totalPoints")
+        setTimeout(function(){
+            window.location.href = "../gameboard.html";
+
+
+        }, 1500)
     })
     answerIncorrect.addEventListener("click", function () {
         totalPoints = parseInt(localStorage.getItem("totalPoints"))
         totalPoints -= questionPoints;
         console.log(totalPoints);
         localStorage.setItem("totalPoints", totalPoints);
-        window.location.href = "../gameboard.html";
+        document.getElementById("points-value").textContent = localStorage.getItem("totalPoints")
+        document.getElementById("points-value").textContent = localStorage.getItem("totalPoints")
+        setTimeout(function(){
+            window.location.href = "../gameboard.html";
+
+
+        }, 1500)
     })
+  
 })
+    document.getElementById("points-value").textContent = localStorage.getItem("totalPoints")
