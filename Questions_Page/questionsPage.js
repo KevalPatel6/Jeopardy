@@ -29,7 +29,7 @@ let question = questionObject.question;
 let answer = questionObject.answer;
 let value = questionObject.value;
 
-let totalPoints = localStorage.getItem("totalPoints");   //localStorage.getItem("totalPoints");
+let totalPoints = parseInt(localStorage.getItem("totalPoints"));   //localStorage.getItem("totalPoints");
 // console.log(totalPoints);
 let questionPoints = 0;
 if (pointValue === "0") {

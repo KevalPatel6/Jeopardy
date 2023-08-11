@@ -1,11 +1,13 @@
 .hide{
-    visibility: collapse;
+    display: none;
 }
 
 .card{
     position: relative;
-    left: 40%;
+    margin: 0 auto;
     top: 300px;
+    font-family: "Big Shoulders Text", cursive;
+    font-weight: 800;
 }
 
 .list-group{
@@ -15,14 +17,18 @@
 
 button{
     position: relative;
-    left: 36.7%;
-    top: 310px;
 }
 
 #points-box{
     position: relative;
+    margin: 0 auto;
     width: 200px;
     height: 80px;
-    left: 1003px;
     text-align: center;
+    font-family: 'helvetica';
+}
+
+.button-container{
+    position: relative;
+    margin: 0 auto;
 }
