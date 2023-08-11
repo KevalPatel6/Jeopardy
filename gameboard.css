@@ -1,27 +1,27 @@
-.row{
+.row {
     height: auto;
 
 }
 
-header{
+header {
     color: white;
-    padding-top:20px;
-    
+    padding-top: 20px;
+
 }
 
-header h1{
+header h1 {
     font-size: 54pt;
     font-family: 'Big Shoulders Text', cursive;
     font-weight: 800;
 }
 
-.hide{
+.hide {
     visibility: hidden;
 }
 
-.categories{
+.categories {
     text-shadow: 3px 3px black;
-    padding-top: 23px;
+
 }
 
 button {
@@ -30,10 +30,103 @@ button {
     font-family: 'helvetica;'
 }
 
-body{
+body {
     background-color: rgb(53, 4, 53);
 }
 
-#cat1-200{
-    width:100%;
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 24pt;
+    }
+
+    header h4 {
+        font-size: 10pt;
+    }
+
+    .categories {
+        font-size: 12pt !important;
+        width: 20% !important;
+        height: 125px !important;
+        vertical-align: center;
+        overflow-wrap: break-word;
+    }
+
+    button {
+        font-size: 20px;
+        width: 20%;
+        height: 50% !important;
+        display: flex;
+        flex-wrap: nowrap;
+
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    header h1 {
+        font-size: 39pt;
+    }
+
+    header h4 {
+        font-size: 20pt;
+    }
+
+    .categories {
+        font-size: 12pt !important;
+        width: 20% !important;
+        height: 125px !important;
+
+
+    }
+
+    button {
+        font-size: 30px;
+        width: 20%;
+        text-align: center;
+    }
+
+}
+
+
+@media screen and (min-width:992px) and (max-width: 1200px) {
+    header h1 {
+        font-size: 80pt;
+    }
+
+    header h4 {
+        font-size: 30pt;
+    }
+
+    .categories {
+        font-size: 24pt !important;
+        width: 20% !important;
+        height: 200px !important;
+
+    }
+
+    button {
+        font-size: 40px;
+        width: 20%;
+    }
+
+}
+
+@media screen and (min-width:1200x) and (max-width:1400) {
+    header h1 {
+        font-size: 80pt !important;
+    }
+
+    header h4 {
+        font-size: 30pt !important;
+    }
+
+    .categories {
+        font-size: 24pt !important;
+        width: 20% !important;
+        height: 200px !important;
+    }
+
+    button {
+        font-size: 40px;
+        width: 20%;
+    }
 }
