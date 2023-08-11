@@ -29,7 +29,7 @@ let question = questionObject.question;
 let answer = questionObject.answer;
 let value = questionObject.value;
 
-let totalPoints = localStorage.getItem("totalPoints");   //localStorage.getItem("totalPoints");
+let totalPoints = parseInt(localStorage.getItem("totalPoints"));   //localStorage.getItem("totalPoints");
 // console.log(totalPoints);
 let questionPoints = 0;
 if (pointValue === "0") {
@@ -39,17 +39,17 @@ if (pointValue === "0") {
     questionPoints = (parseInt(pointValue) + 1) * 200
     console.log(questionPoints)
 }
-pointsText.textContent = "point value: " + questionPoints;
+pointsText.textContent = "point value:  " + questionPoints;
 answerCorrect.classList.add("hide");
 answerIncorrect.classList.add("hide");
 
 
 
-categoryText.textContent = "category: " + category;
+categoryText.innerHTML = `category:  <p> ${category}</p>`;
 console.log(value, question, answer);
 
 // pointsText.textContent = "point value: " + value;
-questionText.textContent = "the answer is: " + question;
+questionText.innerHTML = `The answer is: <p> ${question}</p>`;
 
 checkAnswer.addEventListener("click", function () {
     answerText.textContent = answer;
