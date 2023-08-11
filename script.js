@@ -28,5 +28,5 @@ document.getElementById("beginGameEl").addEventListener('click', startGame);
 function startGame() {
     console.log(window.location.href);
     console.log("working!")
-    window.location.href = "/gameboard.html";
+    window.location.href = "./gameboard.html";
 }
