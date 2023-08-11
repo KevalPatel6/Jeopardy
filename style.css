@@ -15,6 +15,7 @@
 #titleEl {
     animation-name: example;
     animation-duration: 3s;
+    font-family: fantasy;
 }
 
 #instructionsTitleEl {
@@ -39,6 +40,14 @@
 
 .btn {
     animation-name: example;
-
     animation-duration: 6s;
+    font-family: fantasy;
+    /* padding-bottom: 10px; */
+    /* background-color: white;
+    border-color: goldenrod;
+    color: white; */
 }
+
+/* .ul.listEl {
+    padding-bottom: 20px;
+} */
