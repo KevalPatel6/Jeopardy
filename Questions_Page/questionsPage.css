@@ -44,3 +44,35 @@ button{
     position: relative;
     margin: 0 auto;
 }
+
+#card-background{
+    background-color: blue;
+    color:rgb(244, 168, 18);
+    width: 50%;
+    margin: 0 auto;
+    padding: 40px;
+
+}
+
+li{
+    list-style: none;
+    margin: 20px;
+    font-size: 3.6em;
+    font-weight: 800;
+}
+
+#category{
+    text-transform: capitalize;
+}
+
+#points{
+    text-transform: capitalize;
+}
+
+#question{
+    text-transform: capitalize;
+}
+
+#answer{
+    text-transform: capitalize;
+}
