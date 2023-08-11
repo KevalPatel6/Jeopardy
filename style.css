@@ -15,7 +15,9 @@
 #titleEl {
     animation-name: example;
     animation-duration: 3s;
-    font-family: fantasy;
+    font-size: 80pt;
+    font-family: 'Big Shoulders Text', cursive;
+    font-weight: 800;
 }
 
 #instructionsTitleEl {
@@ -42,12 +44,5 @@
     animation-name: example;
     animation-duration: 6s;
     font-family: fantasy;
-    /* padding-bottom: 10px; */
-    /* background-color: white;
-    border-color: goldenrod;
-    color: white; */
+    
 }
-
-/* .ul.listEl {
-    padding-bottom: 20px;
-} */
