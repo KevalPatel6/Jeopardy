@@ -117,6 +117,9 @@ function hideChosenQuestions() {
     }
     else {
         let indicesParsed = JSON.parse(localStorage.index)
+        if(catAndquestionIndices.length===25){
+            window.location.href="./endpage.html"
+        }
         for (let i = 0; i < indicesParsed.length; i++) {
             let arrayOfIndices = indicesParsed[i]
             let arrayOfIndicesSeparated = arrayOfIndices.split('')
