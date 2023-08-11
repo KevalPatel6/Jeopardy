@@ -3,6 +3,18 @@
 
 }
 
+header{
+    color: white;
+    padding-top:20px;
+    
+}
+
+header h1{
+    font-size: 54pt;
+    font-family: 'Big Shoulders Text', cursive;
+    font-weight: 800;
+}
+
 .hide{
     visibility: hidden;
 }
@@ -13,13 +25,15 @@
 }
 
 button {
-    text-shadow: 3px 3px black;
+    text-shadow: 4px 4px black;
+    font-size: 100px;
+    font-family: 'helvetica;'
 }
 
 body{
-    background-color: purple;
+    background-color: rgb(53, 4, 53);
 }
 
 #cat1-200{
-    width:100%
+    width:100%;
 }
