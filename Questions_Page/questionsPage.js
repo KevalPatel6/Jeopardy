@@ -35,13 +35,13 @@ if (pointValue === "0") {
     questionPoints = (parseInt(pointValue) + 1) * 200
     console.log(questionPoints)
 }
-pointsText.textContent = "point value: " + questionPoints;
+pointsText.textContent = "point value:  " + questionPoints;
 answerCorrect.classList.add("hide");
 answerIncorrect.classList.add("hide");
 
 
 
-categoryText.textContent = "category: " + category;
+categoryText.innerHTML = `category:  <p> ${category}</p>`;
 console.log(value, question, answer);
 
 
