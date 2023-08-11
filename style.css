@@ -15,6 +15,9 @@
 #titleEl {
     animation-name: example;
     animation-duration: 3s;
+    font-size: 80pt;
+    font-family: 'Big Shoulders Text', cursive;
+    font-weight: 800;
 }
 
 #instructionsTitleEl {
@@ -39,6 +42,7 @@
 
 .btn {
     animation-name: example;
-
     animation-duration: 6s;
+    font-family: fantasy;
+    
 }
