@@ -2,17 +2,25 @@
     display: none;
 }
 
+body {
+    background-color: rgb(53, 4, 53);
+}
+
 .card{
     position: relative;
     margin: 0 auto;
     top: 300px;
     font-family: "Big Shoulders Text", cursive;
     font-weight: 800;
+    background-color: blue;
+    color: rgb(244, 168, 18);
 }
 
 .list-group{
     position: relative;
     top: 50%;
+    color: rgb(244, 168, 18);
+    background-color: blue;
 }
 
 button{
@@ -25,7 +33,11 @@ button{
     width: 200px;
     height: 80px;
     text-align: center;
-    font-family: 'helvetica';
+    font-family: "Big Shoulders Text", cursive;
+    font-weight: 800;
+    color: rgb(244, 168, 18);
+    background-color: blue;
+    
 }
 
 .button-container{
