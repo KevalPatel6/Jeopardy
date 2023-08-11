@@ -5,8 +5,14 @@
 
 header{
     color: white;
-    padding-top:20px
+    padding-top:20px;
     
+}
+
+header h1{
+    font-size: 54pt;
+    font-family: 'Big Shoulders Text', cursive;
+    font-weight: 800;
 }
 
 .hide{
@@ -19,9 +25,9 @@ header{
 }
 
 button {
-    text-shadow: 5px 5px black;
+    text-shadow: 4px 4px black;
     font-size: 100px;
-    font-family: helvetica;
+    font-family: 'helvetica;'
 }
 
 body{
