@@ -1,12 +1,7 @@
-# Project-1
-This is a repository for Project 1. 
-# <Project-Jeopardy>
-
+# Jeopardy-Quiz-Game
 ## Description
 
-
-Welcome to the Quiz Game Application! This application allows users to play a trivia quiz game by selecting categories and answering questions to earn points. The game fetches random categories and questions from the [jservice.io](https://jservice.io/) API and provides an interactive webpage for users to play.
-
+Welcome to the Jeopardy Quiz Game Application! This application allows users to play a Jeopardy-based trivia quiz game by selecting categories and answering questions to earn points. The game fetches random categories and questions from the [jservice.io](https://jservice.io/) API and provides an interactive webpage for users to play.
 
 ## Features
 
@@ -15,25 +10,41 @@ Welcome to the Quiz Game Application! This application allows users to play a tr
 - Allows users to select categories and answer questions to earn points.
 - Stores user's total score in local storage.
 
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-
 ## Usage
 
-1.Upon opening the game, you will see a gameboard with categories displayed.
+1. First, to access the application, you will need to go to the landing page, which can be located here >> https://kevalpatel6.github.io/Jeopardy/
 
-2.If there are enough random categories stored in local storage, the game will display these categories. Otherwise, it will fetch random categories from the API.
+2.Upon clicking through the landing page, you will be presented with instructions on how to play. After clicking through the instructions page, you will see a gameboard with categories displayed.
 
-3.Click on a category button to select it.
+3.If there are enough random categories stored in local storage, the game will display these categories. Otherwise, it will fetch random categories from the API.
 
-4.Once a category is selected, the game will fetch questions related to that category from the API and display them.
+Below is a screen shot of the gameboard.
 
-5.Answer the questions by clicking on the corresponding buttons. Your score will be updated based on your correct answers.
+![Alt text](assets/Jeopardy-Gameboard.PNG)
 
-6.The total score is displayed at the top of the gameboard.
+4.Click on a category question to select it. (money values below the categories)
 
-7.Enjoy the quiz and challenge yourself to earn the highest score!
+5.Once a category is selected, the game will fetch questions related to that category from the API and display them.
+
+Below is a screen shot of the question page.
+
+![Alt text](assets/Jeopardy-Question-Page.PNG)
+
+6.Answer the question before checking your answer. You will need to manually decided whether your answer was correct or incorrect. Your score will be updated based on your correct answers.
+
+7.The total score is displayed at the top of the gameboard.
+
+Below you can see a screen shot of an answered question with the total score updated at the top of the screen. 
+
+![Alt text](assets/Jeopardy-Gameboard-After-Answered.PNG)
+
+8. After all the questions have been answered, you will be redirected to the end page where you can decided if you want to play again. 
+
+Below you can see a screen shot of the end page. 
+
+![Alt text](assets/Jeopardy-End-Page.PNG)
+
+9.Enjoy the quiz and challenge yourself to earn the highest score!
 
 ## Credits
 
