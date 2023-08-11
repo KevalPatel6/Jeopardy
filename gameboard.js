@@ -30,7 +30,6 @@ function fetchRandomNumber() {
     fetch("https://api.math.tools/numbers/nod")
         .then(response => response.json())
         .then(randomCats => {
-            console.log(randomCats);
             let numValue = randomCats.contents.nod.numbers.number
             numValue = (Math.random() * 100000)
             let catValue = numValue % 20000
@@ -59,7 +58,6 @@ function fetchRandomNumber() {
                 if (catData[i].clues_count >= 5) {
                     
                     pushAndSave(randomCategoriesID, catData[i], 'categories')
-                    console.log(randomCategoriesID)
                     await fetch(`https://jservice.io/api/clues?category=${randomCategoriesID[i].id}`)
                     .then(response => response.json())
                     .then(qNAData => {
