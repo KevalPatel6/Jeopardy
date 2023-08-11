@@ -30,6 +30,11 @@ button {
     font-family: 'helvetica;'
 }
 
+button:hover {
+    border-color: red !important;
+
+}
+
 body {
     background-color: rgb(53, 4, 53);
 }
