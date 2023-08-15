@@ -52,7 +52,7 @@ Keval Patel - https://github.com/KevalPatel6
 Jason Navon - https://github.com/godot23 
 John Doaks - https://github.com/jtdoaks
 
-Special thanks to our instructor Dane Edwards on helping us with the async await and our TA Andrew Layendecker for helping with local storage issues. 
+Special thanks to our instructor Dane Edwards on helping us with the async await and our TAs Andrew Layendecker and Justyn Subrai for helping with local storage issues. 
 
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
